@@ -36,7 +36,6 @@ app.get('/display', function (req, res) {
       };
     });
     res.render('display.ejs', {meows: newMeows});
-    console.log(newMeows)
   });
 });
 
@@ -48,13 +47,26 @@ app.get('/post', function (req, res) {
 app.post('/post', function(req, res) {
   var collection = global.db.collection('meow')
   collection.save(req.body)
-
   res.redirect('/display')
   });
 
-
-
 //------------------------------------
+
+app.get('/display/:name', function (req,res) {
+    renderName = req.params.name
+    console.log(renderName)
+  //     var collection = global.db.collection("meow")
+  // collection.find().toArray(function(err, meows) {
+  //   newMeows = meows.map(function(meow) {
+  //     return {
+  //       _id: meow._id,
+  //       name: meow.name,
+  //     };
+  //   });
+    res.render('nameDisplay.ejs', {name: renderName});
+   });
+ // });
+
 
 
 

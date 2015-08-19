@@ -6,7 +6,7 @@
   <body>
     <h1>Display</h1>
      <% meows.forEach(function(meow) { %>
-        <div>Id: <%= meow._id %>, Name: <%= meow.name %></div>
+        <div>Id: <%= meow._id %>, Name: <a href="display/<%= meow.name %>"><%= meow.name %></a></div>
      <% }); %>
   </body>
 </html>
