@@ -55,17 +55,9 @@ app.post('/post', function(req, res) {
 app.get('/display/:name', function (req,res) {
     renderName = req.params.name
     console.log(renderName)
-  //     var collection = global.db.collection("meow")
-  // collection.find().toArray(function(err, meows) {
-  //   newMeows = meows.map(function(meow) {
-  //     return {
-  //       _id: meow._id,
-  //       name: meow.name,
-  //     };
-  //   });
     res.render('nameDisplay.ejs', {name: renderName});
    });
- // });
+
 
 
 
