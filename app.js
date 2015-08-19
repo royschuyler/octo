@@ -26,6 +26,19 @@ app.get('/home', function (req, res) {
 });
 
 //----------------------------------------------------
+app.get('/post', function (req, res) {
+  res.render('post.ejs');
+});
+
+app.post('/post', function(req, res) {
+  var collection = global.db.collection('meow')
+  collection.save(req.body)
+  res.redirect('/display')
+  });
+
+//------------------------------------
+
+//----------------------------------------------------
 app.get('/display', function (req, res) {
   var collection = global.db.collection("meow")
   collection.find().toArray(function(err, meows) {
@@ -39,25 +52,23 @@ app.get('/display', function (req, res) {
   });
 });
 
-//----------------------------------------------------
-app.get('/post', function (req, res) {
-  res.render('post.ejs');
-});
 
-app.post('/post', function(req, res) {
-  var collection = global.db.collection('meow')
-  collection.save(req.body)
-  res.redirect('/display')
-  });
-
-//------------------------------------
-
-app.get('/display/:name', function (req,res) {
+//--------------------------------------------------
+app.get('/nameDisplay/:name', function (req,res) {
     renderName = req.params.name
     console.log(renderName)
     res.render('nameDisplay.ejs', {name: renderName});
    });
 
+
+app.post('/nameDisplay/:name', function(req, res) {
+  // renderName = req.params.name;
+  // console.log(req.body);
+  console.log(renderName);
+  var collection = global.db.collection('meow');
+  collection.update({name: renderName}, {$set: req.body}  )
+  res.redirect('/display');
+  });
 
 
 
