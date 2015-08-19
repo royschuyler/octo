@@ -1,0 +1,27 @@
+{
+  "name": "octo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/royschuyler/octo.git"
+  },
+  "author": "roy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/royschuyler/octo/issues"
+  },
+  "homepage": "https://github.com/royschuyler/octo#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "ejs": "^2.3.3",
+    "express": "^4.13.3",
+    "less-middleware": "^2.0.1",
+    "moment": "^2.10.6",
+    "mongodb": "^2.0.42"
+  }
+}

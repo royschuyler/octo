@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Display</title>
+  </head>
+  <body>
+    <h1>Display</h1>
+     <% meows.forEach(function(meow) { %>
+        <div>Id: <%= meow._id %>, Name: <%= meow.name %></div>
+     <% }); %>
+  </body>
+</html>
